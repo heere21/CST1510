@@ -56,11 +56,32 @@ def print_report(label, value, limit, difference, perecent, status):
 #    Excellent : also write the results out to a new file (one line per
 #                record: label, status), as well as printing them.
 
-records = [
-    {"label": "server", "value": 21, "limit": 15},
-    {"label": "client", "value": 453.2, "limit": 25.3},
-    {"label": "record",  "value": 152.11, "limit": 70.11}
-]
+def load_records(path):
+    """Read a data file where each line has label, value and limit then returns them as a list of dictionaries. """
+    record_list = []
+    #Open file in read mode
+    with open(path, 'r') as file:
+        for line in file:
+            parts = line.strip().split(",")
+            if len(parts) == 3:
+                label = parts[0]
+                value = float(parts[1])
+                limit = float(parts[2])
+                #Add the rcord dictionary to our list
+                record_list.append({
+                    "label": label,
+                    "value": value,
+                    "limit": limit
+                })
+    return record_list
+
+def save_reselts(records, output_path="results.txt"):
+    """Write results out to a new file"""
+    with open(output_path, "w") as f:
+        for record in records:
+            line = f"{record['label']}, {record['status']}\n"
+            f.write(line)
+    print(f"Results successfully saved to {output_path} ")
 
 
 
