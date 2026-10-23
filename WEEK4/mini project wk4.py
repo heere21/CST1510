@@ -95,7 +95,7 @@ def save_reselts(records, output_path="results.txt"):
 
 # your loop goes here
 count = 0
-
+records = load_records("data.txt")
 for record in records:
     difference, percent, status = check_record(
         record["value"],
