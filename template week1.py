@@ -14,6 +14,7 @@ Delete these instructions as you replace them with your code.
 
 # ==================================================================== INPUT
 # 1. Ask the user for your three values.
+"""Collects user input for data processing, including a text label and two floating-points numbers."""
 label = input("Enter a label: ")
 first = float(input("Enter the first number: "))
 second = float(input("Enter the second number: "))
@@ -23,6 +24,7 @@ second = float(input("Enter the second number: "))
 
 # ================================================================== PROCESS
 # 2. Work out what you were NOT given.       [Typical and above]
+"""Performs calculation on the input values, determining the absolute difference and calculating the percentage proportion."""
 difference = abs(first - second)
 percent = (first / second) * 100 
 
@@ -41,7 +43,7 @@ print()
 print("=" * 34)
 print(f"  RECORD CHECK  -  {label}")
 print("=" * 34)
-
+"""Outputs the formatted report lines, including right-aligned numeric values."""
 # : your report lines go here
 print(f"First number : {first:>10.2f}")
 print(f"Second number: {second:>10.2f}")
