@@ -3,7 +3,7 @@ RECORD CHECK  -  my version
 ===========================
 
 Name  :Heeresha Nawjee
-Lane  :  AI / Cyber / IT      (delete two)
+Lane  :  AI 
 Date  :02/10/26
 
 Run it:   python template.py
@@ -14,12 +14,14 @@ Delete these instructions as you replace them with your code.
 
 # ==================================================================== INPUT
 # 1. Ask for your three values.
+"""Collects user input for data validation, including label, value and limit."""
 label = input("Enter a label: ")
 value = float(input("Enter a value: "))
 limit = float(input("Enter a limit: "))
 
 # ================================================================== PROCESS
 # 2. Work out the difference and the percentage.       [Typical and above]
+"""Calculate the difference and percetage proportion."""
 difference = value - limit
 percent = (value / limit) * 100
 
